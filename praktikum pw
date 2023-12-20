@@ -1,0 +1,192 @@
+kurs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: solid black;
+        }
+    </style>
+    <script>
+        function kalkulator(){
+            let input = document.getElementById("inputan").value;
+            let mata_uang = document.getElementById("matauang").value;
+
+            console.log (input * mata_uang);
+
+            let area_hasil = document.getElementById("hasil");
+            area_hasil.innerHTML = input * mata_uang;
+        }
+    </script>
+</head>
+<body>
+    <h1>Menghitung Kurs Rupiah</h1>
+    <table style="width: 50%;">
+        <tr>
+            <td>Masukan Nilai</td>
+            <td>Mata Uang</td>
+            <td>Nilai Rupiah</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="inputan" onchange="kalkulator()">
+            </td>
+            <td>
+            <select name="" id="matauang" onchange="kalkulator()">
+                <option value="">Pilih Mata Uang</option>
+                <option value="14650">Dollar US</option>
+                <option value="9999">Dollar Singapore</option>
+            </select>
+            </td>
+            <td>
+                <p id="hasil"></p>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
+
+Luas keliling
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lingkaran</title>
+</head>
+<body>
+    <h1> Hitung Luas & Keliling Lingkaran</h1>
+
+    <label for="jari2">Nilai Jari Jari : </label>
+    <input type="number" id="jari2">
+    <button onclick=" hitunglingkaran()">Hitung</button>
+    
+    <hr>
+    <p>Luas Lingkaran = <span id="hasilluas"></span> </p>
+    <hr>
+    <p>Keliling Lingkaran = <span id="hasilkeliling"></span> </p>
+
+    <script>
+        function hitunglingkaran(){
+            let jari2 = document.getElementById("jari2").value;
+            const phi = 3.14;
+            
+            // Rumus luas lingkaran
+            let hasilluas = phi * jari2 * jari2;
+
+            console.log("Luas Lingkaran = " + hasilluas);
+
+            let hasilluas2 = document.getElementById("hasilluas");
+            hasilluas2.innerHTML = hasilluas;
+
+            //Rumus Keliling Lingkaran
+
+            let hasilkeliling = 2 * phi * jari2
+
+            console.log("Keliling Lingkaran = " + hasilkeliling);
+
+            let hasilKeliling2 = document.getElementById("hasilkeliling");
+            hasilKeliling2.innerHTML = hasilkeliling;
+
+        }
+    </script>
+
+</body>
+</html>
+
+penjumlahan
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function jumlahkan(){
+            let angka1 = document.getElementById("angka_1").value;
+            let angka2 = document.getElementById("angka_2").value;
+            let hasil = parseInt(angka1) + parseInt(angka2);
+            console.log(hasil);
+
+            let area_hasil = document.getElementById("hsl");
+            area_hasil.innerHTML = hasil;
+        }
+    </script>
+</head>
+<body>
+    <h1>Penjumlahan Dua Bilangan</h1>
+
+    <input type="number" id="angka_1">
+    +
+    <input type="number" id="angka_2">
+    <button onclick="jumlahkan()">jumlahkan</button>
+
+    <br>
+
+    <hr>
+
+    <h2>Hasil :</h2>
+    <span id="hsl"></span>
+
+
+</body>
+</html>
+
+Parkir
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function hitung_parkir(){
+            const per2jam = 3000; 
+            const sejam = 1000;
+
+            let masuk = document.getElementById("msk").value ;
+            let keluar = document.getElementById("klr").value ;
+            let selisih = keluar - masuk;
+            let biaya = 0;
+
+            if(selisih <= 2){
+                biaya = per2jam;
+            } 
+            else{
+                let jam_tambahan = selisih - 2;
+                biaya = per2jam + ( jam_tambahan * sejam);
+            }
+
+            let _hasil = document.getElementById("hasil");
+            _hasil.innerHTML = biaya ;
+        
+            }
+   
+    </script>
+</head>
+<body> 
+    <h1>Menghitung Biaya Parkir</h1>
+
+    Jam Masuk :
+    <input type="number" id="msk" >
+    <br>
+
+    Jam Keluar :
+    <input type="number" id="klr">
+    <br>
+
+    <button onclick="hitung_parkir()" >Hitung Biaya Parkir</button>
+
+    <hr>
+
+    <h2>Biaya parkir yang harus dibayar</h2>
+    <span id="hasil"></span> 
+
+</body>
+</html>
